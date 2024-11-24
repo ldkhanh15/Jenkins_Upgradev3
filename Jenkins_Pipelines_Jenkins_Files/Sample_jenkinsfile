@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Clone the Git repository's master branch
-                    def gitRepoUrl = 'https://github.com/anshulc55/Jenkins_Upgradev3.git'
+                    def gitRepoUrl = 'https://github.com/ldkhanh15/Jenkins_Upgradev3.git'
 
                     checkout([$class: 'GitSCM', 
                         branches: [[name: '*/master']], 
@@ -27,7 +27,8 @@ pipeline {
                 // Build your application here (e.g., compile, package, etc.)
                 sh '''
                 ls
-                echo "In Build Step"
+                pwd
+                echo "In Build Step ne"
                 '''
             }
         }
@@ -35,14 +36,14 @@ pipeline {
         stage('Test') {
             steps {
                 // Run your tests (e.g., unit tests, integration tests)
-                sh 'echo "In Test Step"'
+                sh 'echo "In Test Step ne"'
             }
         }
 
         stage('Deploy') {
             steps {
                 // Deploy your application to a target environment (e.g., staging, production)
-                sh 'echo "Value of ENV Varaible is "$MY_ENV_VAR""'
+                sh 'echo "Value of ENV Varaible is "$MY_ENV_VAR" ne"'
             }
         }
     }
